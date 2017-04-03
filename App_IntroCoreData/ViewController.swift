@@ -19,9 +19,9 @@ class ViewController: UIViewController {
         
         //1 -> Creamos la instacia a través de la cual salvaremos los datos en CoreData
         let customPersona = Persona(context: managedContext)
-        customPersona.firstname = "Jorge"
-        customPersona.lastname = "Moñiz"
-        customPersona.phone = "566778899"
+        customPersona.firstname = "Antonio"
+        customPersona.lastname = "Hernández"
+        customPersona.phone = "606770011"
         
         //2 -> Salvar los datos a través del contexto
         do {
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         
         //3 -> Recuperación de datos - Query
         let customRequest : NSFetchRequest<Persona> = Persona.fetchRequest()
-        let customPredicate = NSPredicate(format : "nombre = 'Felipe'")
+        let customPredicate = NSPredicate(format : "firstname = 'Felipe'")
         let customSortDescriptor = NSSortDescriptor(key: "lastname", ascending: false)
         
         customRequest.predicate = customPredicate
